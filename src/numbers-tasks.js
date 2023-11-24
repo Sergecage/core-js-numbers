@@ -34,7 +34,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCircleCircumference(radius) {
-  return 2* Math.PI * radius;
+  return 2 * Math.PI * radius;
 }
 
 /**
@@ -50,7 +50,7 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return (value1 + value2)/2;
+  return (value1 + value2) / 2;
 }
 
 /**
@@ -69,7 +69,7 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-  return Math.sqrt((x2 - x1)**2+(y2 -y1)**2);
+  return Math.sqrt((x2 - x1) ** 2 + (y2 -y1) ** 2);
 }
 
 /**
@@ -85,7 +85,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-  return (-b) / a;
+  return ( -b ) / a;
 }
 
 /**
@@ -106,7 +106,7 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-  return Math.acos(x1 * y1 + x2 * y2)/((x1**2 *x2**2) * (y1 ** 2 * y2 **2));
+  return Math.acos(x1 * y1 + x2 * y2) / ((x1 ** 2 * x2 ** 2) * (y1 ** 2 * y2 ** 2));
 }
 
 /**
@@ -155,7 +155,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelepipedDiagonal(a, b, c) {
-  return Math.sqrt(a**2 + b **2 + c**2);
+  return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
 
 /**
@@ -504,9 +504,9 @@ function roundToSmallestInteger(number) {
  * 5.1  => 6
  * -5.9 => -5
  */
-function roundToLargestInteger(/* number */) {
-  throw new Error('Not implemented');
-}
+function roundToLargestInteger(number) {
+  return Math.ceil(number);
+};
 
 /**
  * Returns the value of a number rounded to the nearest integer.
@@ -519,9 +519,9 @@ function roundToLargestInteger(/* number */) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function roundToNearestInteger(/* number */) {
-  throw new Error('Not implemented');
-}
+function roundToNearestInteger(number) {
+  return Math.round(number);
+};
 
 /**
  * Returns the integer part of a number by removing any fractional digits.
@@ -534,9 +534,9 @@ function roundToNearestInteger(/* number */) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function getIntegerPartNumber(/* number */) {
-  throw new Error('Not implemented');
-}
+function getIntegerPartNumber(number) {
+  return Math.trunc(number);
+};
 
 /**
  * Returns the sum of numbers.
@@ -550,9 +550,9 @@ function getIntegerPartNumber(/* number */) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(/* x1, x2, x3 */) {
-  throw new Error('Not implemented');
-}
+function getSumOfNumbers(x1, x2, x3) {
+  return Math.abs(x1 + x2 + x3);
+};
 
 /**
  * Returns the largest number.
@@ -566,9 +566,9 @@ function getSumOfNumbers(/* x1, x2, x3 */) {
  * -5, -6 => -5
  * 0, 5   => 5
  */
-function getMaxNumber(/* firstNumber, secondNumber */) {
-  throw new Error('Not implemented');
-}
+function getMaxNumber(firstNumber, secondNumber) {
+  return Math.max(firstNumber, secondNumber);
+};
 
 /**
  * Returns a random integer in the range from min to max.
@@ -582,9 +582,9 @@ function getMaxNumber(/* firstNumber, secondNumber */) {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-function getRandomInteger(/* min, max */) {
-  throw new Error('Not implemented');
-}
+function getRandomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+};
 
 /**
  * Returns the length of the hypotenuse of a right triangle.
@@ -596,9 +596,9 @@ function getRandomInteger(/* min, max */) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse(/* a, b */) {
-  throw new Error('Not implemented');
-}
+function getHypotenuse(a, b) {
+  return Math.hypot(a, b);
+};
 
 /**
  * Returns count of odd numbers from zero to the resulting number.
@@ -613,9 +613,15 @@ function getHypotenuse(/* a, b */) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
-}
+function getCountOfOddNumbers(number) {
+  let total = 0;
+  for ( let i = 0; i <= Math.abs(number); i++){
+    if ( i % 2 === 0) {
+      total += 1;
+    }
+  }
+  return total;
+};
 
 module.exports = {
   getRectangleArea,
